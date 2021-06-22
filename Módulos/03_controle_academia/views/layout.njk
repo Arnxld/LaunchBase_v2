@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href= rel="stylesheet">
+
+        {% block head %}
+        <title>Mayk Brito</title>
+        {% endblock %}
+
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/">Sobre</a>
+                <a href="/portfolio">Aulas</a>
+            </div>
+        </header>
+
+        {% block content %}
+        {% endblock %}
+    </body>
+</html>
