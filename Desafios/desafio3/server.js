@@ -21,6 +21,18 @@ server.get("/about", function(req, res) {
     res.render("about", {data})
 })
 
+server.get("/posts/:id", function(req, res) {
+    const id = req.params.id;
+
+    const post = data.posts.find(function(post) {
+        if (post.id == id) {
+            return true;
+        }
+    })
+
+    res.render("post-page", {post})
+})
+
 server.use(function(req, res) {
     res.status(404).render("not-found");
 });

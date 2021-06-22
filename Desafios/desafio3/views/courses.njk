@@ -19,9 +19,11 @@ rel="stylesheet">
         <div class="card__info">
             <div class="head">
                 <p class="card-title">{{post.title}}</p>
-                <p class="card-author">{{post.author}}</p>
             </div>
-            <p class="card-time"><span>{{post.duration}} min</span></p>
+            <div class="card-description">
+                <p class="card-author">{{post.author}}</p>
+                <p class="card-time"><span>{{post.duration}} min</span></p>
+            </div>
         </div>
     </div>
     {% endfor %}

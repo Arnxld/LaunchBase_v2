@@ -1,0 +1,16 @@
+{% extends "layout.njk"%}}
+
+{%block head%}
+    <Title>{{post.title}}</Title>
+        
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+rel="stylesheet">
+{% endblock %}
+
+{%block content%}
+<section class="post">
+    <iframe src="https://blog.rocketseat.com.br/{{post.id}}" frameborder="0"></iframe>
+</section>
+
+<script src="/scripts.js"></script>
+{%endblock%}
