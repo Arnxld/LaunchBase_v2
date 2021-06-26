@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: none
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --main-text: #111111;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.content {
+    margin: 0 490px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 30px 0px;
+    align-items: center;
+}
+
+
+.header_logo {
+    margin-right: 122.4px;
+}
+
+.header_links a {
+    color: var(--main-text);
+    text-decoration: none;
+    font-size: 16px;
+}
+
+
+.header_links a + a {
+    margin-left: 30px;
+}
+
+.home__introduction {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 366px;
+    width: 100%;
+    background-color: #FBDFDB;
+    border-radius: 30px;
+}
+
+.home__introduction-text {
+    width: 316px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    color:var(--main-text);
+    
+}
+
+.home__introduction-text h1 {
+    font-size: 32px;
+    line-height: 32px;
+}
+
+.home__introduction-text p {
+    margin-top: 10px;
+    font-size: 18px;
+    line-height: 28px;
+    color: #000000;
+    opacity: 0.7;
+}
+
+.home__introduction-image-container {
+    position: relative;
+}
+
+.home__introduction img {
+    position: absolute;
+    bottom: 0;
+    right: 100px;
+}
+
+.home__most-accessed {
+    margin-top: 50px;
+}
+
+.home__most-accessed h1 {
+    font-size: 24px;
+    color:var(--main-text)
+}
+
+.home__most-accessed .cards {
+    margin-top: 20px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px 20px;
+    
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card__info {
+    margin-top: 20px;
+}
+
+.card__info h2 {
+    font-weight: regular;
+    font-size: 18px;
+    line-height: 21px;
+    color: var(--main-text);
+}
+
+.card__info p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #777777
+}
+
+footer {
+    height: 62px;
+    margin-top: 50px;
+    background-color: #EEEEEE;
+    display: grid;
+    place-items: center;
+    color: #999999;
+    font-size: 14px;
+}
+
+.about-text {
+    margin-top: 30px;
+}
+
+.about__text-div h1 {
+    font-size: 24px;
+    color: var(--main-text);
+}
+
+.about__text-div h2 {
+    font-size: 20px;
+    color: var(--main-text);
+}
+
+.about__text-div p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #444444;
+    line-height: 28px;
+}
