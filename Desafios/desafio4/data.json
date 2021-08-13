@@ -1,0 +1,14 @@
+{
+  "teachers": [
+    {
+      "id": 1,
+      "name": "Pedro Henrique Arnold",
+      "avatar_url": "http://teste.com",
+      "birth": 1000425600000,
+      "education": "undergraduation",
+      "class_type": "presential",
+      "area": "Programação",
+      "created_at": 1628818143184
+    }
+  ]
+}

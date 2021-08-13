@@ -129,3 +129,50 @@ header .links a:hover::after {
 .details .item span + span {
     margin-left: 4px;
 }
+
+/* === FORM === */
+
+form h2 {
+    padding: 16px;
+    color: black
+}
+
+select,
+input {
+    width: 100%;
+    outline: none;
+    color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input[type="radio"] {
+    width: initial;
+    margin-right: 4px;
+}
+
+select{
+    background: transparent;
+    margin-top: 8px;
+    cursor: pointer;
+}
+
+input::placeholder {
+    color: var(--grey-blue)
+}
+
+.details a,
+button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background: var(--dark-blue);
+    color: #FFF;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+.details a {
+    display: block;
+    box-sizing: border-box;
+    text-decoration: none;
+}

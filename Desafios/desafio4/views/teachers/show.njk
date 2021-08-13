@@ -1,0 +1,53 @@
+{% extends 'layout.njk' %}
+
+
+{% block content %}
+
+<div class="card">
+    <section class="image"></section>
+    <section class="details">
+
+        <div class="item">
+            <div>Nome</div>
+            <div>{{teacher.name}}</div>
+        </div>
+
+        <div class="item">
+            <div>Idade</div>
+            <div>{{teacher.age}}</div>
+        </div>
+
+        <div class="item">
+            <div>Grau de escolaridade</div>
+            <div>{{teacher.education}}</div>
+        </div>
+
+        <div class="item">
+            <div>Tipo de aula</div>
+            {% if teacher.class_type == 'presential' %}
+                <div>Presencial</div>
+            {% endif %}
+            {% if teacher.class_type == 'online' %}
+                <div>À distância</div>
+            {% endif %}
+        </div>
+
+        <div class="item">
+            <div>Acompanhamento</div>
+            <div>
+                {% for area in teacher.area %}
+                <span>{{area}}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="item">
+            <div>Desde</div>
+            <div>{{teacher.created_at}}</div>
+        </div>
+        
+        <a href="#">Editar</a>
+    </section>
+</div>
+
+{% endblock content %}
