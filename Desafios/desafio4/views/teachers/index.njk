@@ -3,43 +3,28 @@
 
 {% block content %}
 
-<div class="card">
-    <section class="image"></section>
-    <section class="details">
-
-        <div class="item">
-            <div>Nome</div>
-            <div>Pedro Henrique Arnold</div>
-        </div>
-
-        <div class="item">
-            <div>Idade</div>
-            <div>19</div>
-        </div>
-
-        <div class="item">
-            <div>Grau de escolaridade</div>
-            <div>Bacharelado</div>
-        </div>
-
-        <div class="item">
-            <div>Tipo de aula</div>
-            <div>À distância</div>
-        </div>
-
-        <div class="item">
-            <div>Acompanhamento</div>
-            <div>
-                <span>Física</span>
-                <span>Matemática</span>
-            </div>
-        </div>
-
-        <div class="item">
-            <div>Desde</div>
-            <div>29/07/2021</div>
-        </div>
-    </section>
+<div class="card table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Instrutor</th>
+                <th>Atendimento</th>
+                <th>Ação</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>
+                        <span style="background: url({{teacher.avatar_url}})"></span>
+                        {{teacher.name}}
+                    </td>
+                <td>{{teacher.area}}</td>
+                <td><a href="/teachers/{{teacher.id}}">ver</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 {% endblock content %}

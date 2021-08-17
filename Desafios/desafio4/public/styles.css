@@ -176,3 +176,84 @@ button[type="submit"] {
     box-sizing: border-box;
     text-decoration: none;
 }
+
+.form-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+
+.form-buttons #delete-button {
+    background-color: red;
+}
+
+
+/* === INDEX TEACHERS === */
+.table-container {
+    display: block;
+    color: var(--dark-blue);
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+.table-container table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.table-container thead tr th {
+    text-align: left;
+}
+
+.table-container thead tr th:last-child,
+.table-container tbody tr td:last-child {
+    text-align: center;
+}
+
+td, th {
+    padding: 16px;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+th {
+    text-transform: uppercase;
+    color: #777;
+    font-size: 14px;
+}
+
+tbody tr:last-child td{
+    border-bottom: none;
+}
+
+tbody tr td:first-child {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    align-items: center;
+}
+
+tbody tr td:first-child span {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+tbody tr td:last-child a {
+    background-color: var(--primary-color);
+
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark-blue);
+    font-size: 12px;
+    border-radius: 4px;
+}
+
+.table-container tbody tr td:last-child {
+    color: var(--dark-blue);
+    font-weight: bold;
+}

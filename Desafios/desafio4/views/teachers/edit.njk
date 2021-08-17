@@ -6,7 +6,7 @@
 <div class="card">
     <section class="image"></section>
     <section class="details">
-        <form  method="POST" action="/teachers">
+        <form id="form-edit" method="POST" action="/teachers?_method=PUT">
             <h2>
                 Editar professor
             </h2>
@@ -14,7 +14,19 @@
 
             {% include "teachers/fields.njk" %}
             
+            <input type="hidden" name="id" value="{{teacher.id}}">
+
         </form>
+
+        <form id="form-delete" action="/teachers/?_method=DELETE" method="post">
+            <input type="hidden" name="id" value="{{teacher.id}}">
+
+        </form>
+
+        <div class="form-buttons">
+            <button id="delete-button" type="submit" form="form-delete">Excluir</button>
+            <button type="submit" form="form-edit">Salvar</button>
+        </div>
     </section>
 </div>
 

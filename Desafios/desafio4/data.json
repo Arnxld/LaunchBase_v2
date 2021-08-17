@@ -3,12 +3,12 @@
     {
       "id": 1,
       "name": "Pedro Henrique Arnold",
-      "avatar_url": "http://teste.com",
-      "birth": 1000425600000,
+      "avatar_url": "https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "birth": 1007856000000,
       "education": "undergraduation",
       "class_type": "presential",
-      "area": "Programação",
-      "created_at": 1628818143184
+      "area": "Matemática, física",
+      "created_at": 1629042637744
     }
   ]
 }
