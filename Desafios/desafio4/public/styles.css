@@ -29,10 +29,15 @@ header {
 }
 
 header .links a {
-    color: var(--dark-blue);
+    color: var(--grey-blue);
+
     text-decoration: none;
     font-weight: bold;
     position: relative;
+}
+
+header .links a.active {
+    color: var(--dark-blue);
 }
 
 header .links a:hover {
@@ -89,7 +94,6 @@ header .links a:hover::after {
 
 .card .details {
     padding: 32px;
-    text-align: center;
 }
 
 .details .item {
@@ -130,6 +134,10 @@ header .links a:hover::after {
     margin-left: 4px;
 }
 
+.details a {
+    text-align: center;
+}
+
 /* === FORM === */
 
 form h2 {
@@ -158,7 +166,8 @@ select{
 }
 
 input::placeholder {
-    color: var(--grey-blue)
+    color: var(--grey-blue);
+    font-size: 14px;
 }
 
 .details a,
@@ -242,15 +251,21 @@ tbody tr td:first-child span {
     border: 2px solid white;
 }
 
-tbody tr td:last-child a {
-    background-color: var(--primary-color);
-
+tbody tr td:last-child a,
+.table-container > a {
+    font-weight: bold;
+    background: var(--light-brown);
     padding: 8px 16px;
     text-decoration: none;
     text-transform: uppercase;
     color: var(--dark-blue);
     font-size: 12px;
     border-radius: 4px;
+}
+
+.table-container > a {
+    display: inline-block;
+    margin-bottom: 16px;
 }
 
 .table-container tbody tr td:last-child {

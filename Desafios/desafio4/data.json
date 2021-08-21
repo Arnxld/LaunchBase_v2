@@ -10,5 +10,17 @@
       "area": "Matemática, física",
       "created_at": 1629042637744
     }
+  ],
+  "students": [
+    {
+      "id": "1",
+      "avatar_url": "http://teste.com",
+      "name": "Pedro Henrique Arnold",
+      "email": "student@gmail.com",
+      "birth": 1000425600000,
+      "grade": "3EM",
+      "class_hours": "25",
+      "created_at": 1629421927729
+    }
   ]
 }
