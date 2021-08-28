@@ -1,41 +1,63 @@
-const {age, graduation, date} = require('../lib/utils')
+const {age, grade, date} = require('../../lib/utils')
+const Student = require('../models/Student')
 
 module.exports = {
     index(req, res) {
-        return res.render("members/index")
+        Student.all(function(students) {
+            return res.render("students/index", {students})
+        })
     },
 
     create(req, res) {
-        return res.render("member/create")
+        return res.render("students/create")
     },
 
     post(req, res) {
         const keys = Object.keys(req.body)
 
-    for (key of keys) {
-        if (req.body[key] == "") {
-            return res.send("Preencha todos os campos")
+        for (key of keys) {
+            if (req.body[key] == "") {
+                return res.send("Preencha todos os campos")
+            }
         }
-    }
 
-    let {avatar_url, name, birth, education, class_type, area} = req.body
+        Student.create(req.body, function(id) {
+            return res.redirect(`/students/${id}`)
+        })
     },
  
     show(req, res) {
         const { id } = req.params
 
-        return
+        Student.find(id, function(student) {
+
+            student.age = age(Date.parse(student.birth))
+            student.grade = grade(student.grade)
+
+            return res.render('students/show', {student})
+        })
     },
 
     edit(req, res) {
-        return
+        const { id } = req.params
+
+        Student.find(id, function(student) {
+
+            student.birth = date(Date.parse(student.birth)).iso
+
+            return res.render('students/edit', {student})
+        })
     },
 
     put(req, res) {
-        return
+        Student.update(req.body, function() {
+            return res.redirect(`/students/${req.body.id}`)
+        })
     },
 
     delete(req, res) {
-        return
+        Student.delete(req.body.id, function() {
+            return res.redirect('/students')
+        })
     }
 }
