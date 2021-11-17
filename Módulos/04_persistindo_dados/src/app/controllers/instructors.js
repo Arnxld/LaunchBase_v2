@@ -1,8 +1,23 @@
+const Instructor = require('../models/Instructor')
 const { age, date } = require('../../lib/utils')
+
 
 module.exports = {
     index(req, res) {
-        return res.render('instructors/index')
+        const {filter} = req.query
+
+        if (filter) {
+            Instructor.findBy(filter, function(instructors) {
+                return res.render('instructors/index', {instructors})
+            })
+        } else {
+            Instructor.all(function(instructors) {
+                return res.render('instructors/index', {instructors})
+            })
+        }
+
+        
+
     },
     create(req, res) {
         return res.render('instructors/create')
@@ -16,20 +31,45 @@ module.exports = {
             }
         }
 
-        let {avatar_url, birth, name, services, gender} = req.body
+        Instructor.create(req.body, function(id){
 
-        return
+            return res.redirect(`/instructors/${id}`)
+        })
     },
     show(req, res) {
-        return
+        const { id } = req.params
+
+        Instructor.find(id, function(instructor) {
+            if(!instructor) return res.send("Instructor not found!")
+
+            instructor.age = age(instructor.birth)
+            instructor.services = instructor.services.split(",")
+            instructor.created_at = date(instructor.created_at).format
+
+            return res.render('instructors/show', {instructor})
+        })
     },
     edit(req, res) {
-        return
+        const { id } = req.params
+
+        Instructor.find(id, function(instructor) {
+            if(!instructor) return res.send("Instructor not found!")
+
+            instructor.birth = date(instructor.birth).iso
+
+            return res.render('instructors/edit', {instructor})
+        })
     },
     put(req, res) {
-        return
+        Instructor.update(req.body, function() {
+            return res.redirect(`/instructors/${req.body.id}`)
+        })
     },
     delete(req, res) {
+        Instructor.delete(req.body.id, function() {
+            return res.redirect(`/instructors`)
+        })
+
         return
     }
 }

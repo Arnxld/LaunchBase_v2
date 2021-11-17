@@ -1,11 +1,18 @@
+const Member = require('../models/Member')
 const { age, date } = require('../../lib/utils')
+
 
 module.exports = {
     index(req, res) {
-        return res.render('instructors/index')
+        Member.all(function(members) {
+            return res.render('members/index', {members})
+        })
+
     },
     create(req, res) {
-        return res.render('instructors/create')
+        Member.instructorSelectOptions(function(options) {
+            return res.render('members/create', {instructorOptions : options})
+        })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -16,20 +23,45 @@ module.exports = {
             }
         }
 
-        let {avatar_url, birth, name, services, gender} = req.body
-
-        return
+        Member.create(req.body, function(id){
+            return res.redirect(`/members/${id}`)
+        })
     },
     show(req, res) {
-        return
+        const { id } = req.params
+
+        Member.find(id, function(member) {
+            if(!member) return res.send("Member not found!")
+
+            member.birth = date(member.birth).birthDay
+
+            return res.render('members/show', {member})
+        })
     },
     edit(req, res) {
-        return
+        const { id } = req.params
+
+        Member.find(id, function(member) {
+            if(!member) return res.send("Member not found!")
+
+            member.birth = date(member.birth).iso
+
+            Member.instructorSelectOptions(function(options) {
+                console.log(member)
+                return res.render('members/edit', {member, instructorOptions : options})
+            })
+        })
     },
     put(req, res) {
-        return
+        Member.update(req.body, function() {
+            return res.redirect(`/members/${req.body.id}`)
+        })
     },
     delete(req, res) {
+        Member.delete(req.body.id, function() {
+            return res.redirect(`/members`)
+        })
+
         return
     }
 }

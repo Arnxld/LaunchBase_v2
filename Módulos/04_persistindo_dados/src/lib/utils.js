@@ -21,11 +21,10 @@ module.exports = {
         const month = `0${date.getUTCMonth() + 1}`.slice(-2)
         const day = `0${date.getUTCDate()}`.slice(-2)
 
-        console.log(`${year}-${month}-${day}`)
-
         return {
             iso: `${year}-${month}-${day}`,
-            birthDay: `${day}/${month}`
+            birthDay: `${day}/${month}`,
+            format: `${day}-${month}-${year}`
         }
     }
 }

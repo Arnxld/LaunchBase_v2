@@ -4,12 +4,24 @@
 {% block content %}
 
 <div class="card table-container">
-    <a href="/instructors/create">Novo</a>
+    <div class="header">
+        <a class="button" href="/instructors/create">Novo</a>
+        <form action="/instructors" method=GET"">
+            <input 
+                type="text"
+                name="filter"
+                placeholder="Filtrar por Nome ou Atendimento"
+            >
+            <button type="submit">Filtrar</button>
+        </form>
+    </div>
+
     <table>
         <thead>
             <tr>
                 <th>Instrutor</th>
                 <th>Atendimento</th>
+                <th>Alunos</th>
                 <th>Ação</th>
             </tr>
         </thead>
@@ -20,7 +32,8 @@
                         <span style="background: url({{instructor.avatar_url}})"></span>
                         {{instructor.name}}
                     </td>
-                    <td>Musculação, crossfit</td>
+                    <td>{{instructor.services}}</td>
+                    <td>{{instructor.total_students}}</td>
                     <td><a href="/instructors/{{instructor.id}}">Ver</a></td>
                 </tr>
             {% endfor %}
