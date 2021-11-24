@@ -1,5 +1,5 @@
 {
-  "name": "launchstore",
+  "name": "launchstoredev",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -8,11 +8,6 @@
     "browsersync": "browser-sync start --proxy http://localhost:5000 --files 'public,src/app/views'"
   },
   "license": "ISC",
-  "nodemonConfig": {
-    "ignore": [
-      "data.json"
-    ]
-  },
   "dependencies": {
     "express": "^4.17.1",
     "method-override": "^3.0.0",
