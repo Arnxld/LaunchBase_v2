@@ -2,7 +2,8 @@
 
 {% block content %}
 <section class="container form">
-    <form  method="POST" action='/products'>
+    {# enctype para enviar arquivos no form #}
+    <form  method="POST" action='/products' enctype="multipart/form-data">
         <div class="header">
             <h3>Editar Produto</h3>
         </div>
