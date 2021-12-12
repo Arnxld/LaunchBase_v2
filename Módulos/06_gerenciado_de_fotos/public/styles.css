@@ -22,8 +22,9 @@ body {
 
 body {
   font-family: "Roboto", sans-serif;
-
   background-color: #f9f9f9;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
@@ -80,6 +81,11 @@ footer {
   padding: 0 32px;
 
   text-align: center;
+}
+
+footer {
+  margin-top: auto;
+  padding: 24px;
 }
 
 header div.container {
