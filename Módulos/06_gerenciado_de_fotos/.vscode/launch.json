@@ -5,8 +5,8 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-node",
-            "request": "launch",
+            "type": "node",
+            "request": "attach",
             "name": "Attach to Process",
             "protocol": "inspector",
             "address": "localhost",
