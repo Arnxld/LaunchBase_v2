@@ -369,7 +369,7 @@ form .item #photos-preview img {
   top: -100%;
   opacity: 0;
 
-  transition: opacity 400ms; 
+  transition: 400ms; 
 }
 
 .product-single .highlight .lightbox-target img {
@@ -393,6 +393,8 @@ form .item #photos-preview img {
   background: #fff;
   position: absolute;
   right: 0;
+  top: -80px;
+
   display: flex;
   align-items: center;
   justify-content: center;
