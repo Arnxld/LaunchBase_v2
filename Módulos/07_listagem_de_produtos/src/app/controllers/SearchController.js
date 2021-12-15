@@ -48,12 +48,15 @@ module.exports = {
                 id: product.category_id,
                 name: product.category_name
             })).reduce((FilteredCategories, cat) => { // para não repetir categories
+
                 const found = FilteredCategories.some(category => category.id == cat.id)
 
                 if(!found) FilteredCategories.push(category)
 
                 return FilteredCategories
-            }, [])
+            }, [])  
+
+            console.log(categories)
 
             return res.render("search/index", {products, search, categories})
         }
