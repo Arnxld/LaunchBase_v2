@@ -1,7 +1,5 @@
 const Product = require('../models/Product');
-const File = require('../models/File');
 const { formatPrice } = require('../../lib/utils');
-const res = require('express/lib/response');
 
 module.exports = {
     async index(req, res) {
@@ -19,12 +17,12 @@ module.exports = {
             return files[0]
         }
 
-        const productsPromise = products.map(product => {
-            product.img = await getImage(product)
+        const productsPromise = products.map(async product => {
+            product.img = await getImage(product.id)
             product.oldPrice = formatPrice(product.old_price)
             product.price = formatPrice(product.price)
             return product
-        })
+        }).filter((product, index) => index > 2 ? false : true)
 
         const lastAdded = await Promise.all(productsPromise)
 
