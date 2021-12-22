@@ -2,17 +2,19 @@
 <html>
     <head>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href= rel="stylesheet">
+            <link href= rel="stylesheet">
 
         {% block head %}
             <title>Launchstore</title>
         {% endblock %}
 
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/styles/index.css">
+        <link rel="stylesheet" href="/styles/messages.css">
     </head>
 
     <body>
+        {% include "parts/messages.njk" %}
         {% include "parts/header.njk" %}
 
         {% block content %}

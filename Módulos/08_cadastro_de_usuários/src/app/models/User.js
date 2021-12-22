@@ -2,7 +2,7 @@ const db = require("../../config/db")
 const fs = require('fs')
 
 module.exports = {
-    async findOne() {
+    async findOne(filters) {
         let query = "SELECT * FROM users"
 
         Object.keys(filters).map(key => {
