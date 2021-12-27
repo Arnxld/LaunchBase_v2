@@ -29,10 +29,13 @@
                         <i class="material-icons">account_circle</i>
                         Minha Conta
                     </a>
-                    {% if user %}
+
+
+                    {# session.userId coming via 'res.locals.session = req.session' settings in server.js #}
+                    {% if session.userId %} 
                     <ul class="submenu">
                         <li>
-                            <a href="/users">Configurações</a>
+                            <a href="/users">Minha conta</a>
                         </li>
                         <li>
                             <a href="/buying">Meus pedidos</a>
