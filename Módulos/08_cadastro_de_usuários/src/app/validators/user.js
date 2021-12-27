@@ -29,6 +29,7 @@ async function show(req, res, next) {
 }
 
 async function post(req, res, next) {
+    console.log(req.body)
 
     // check if all fields are filled
     const fillAllFields = checkAllFields(req.body)

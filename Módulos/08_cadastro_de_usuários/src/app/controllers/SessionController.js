@@ -3,10 +3,15 @@ const res = require("express/lib/response")
 
 module.exports = {
     loginForm(req, res) {
-        return res.render("session/index")
+        return res.render("session/login")
+    },
+    login(req, res) {
+        req.session.userId = req.user.id
+
+        return res.redirect("/users")
     },
     logout(req, res) {
         req.session.destroy()
-        return res.redirect("")
+        return res.redirect("/")
     }
 }

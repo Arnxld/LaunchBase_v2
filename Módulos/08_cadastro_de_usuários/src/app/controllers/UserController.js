@@ -8,12 +8,22 @@ module.exports = {
         return res.render("user/register")
     },
     async post(req, res) {
-        const userId = await User.create(req.body)
+        try {
 
-        req.session.userId = userId // adicionando userId ao req.session
-        // ao registrar, a sessão está sendo automaticamente criada
+            console.log(req.body)
+        
+            const userId = await User.create(req.body)
 
-        return res.redirect('/users')
+            req.session.userId = userId // adicionando userId ao req.session
+            // ao registrar, a sessão está sendo automaticamente criada
+
+            return res.redirect('/users')
+        } catch (err) {
+            return res.render("user/register", {
+                user: req.body,
+                error: "Algo de errado aconteceu! tente novamente."
+            })
+        }
     },
     async show(req, res) {
         const { user } = req
